@@ -37,5 +37,9 @@ dependencies {
 	compile('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	// SWAGGER dependencies
+  	compile "io.springfox:springfox-swagger2:${swagger2Version}"
+  	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

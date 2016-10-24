@@ -1,6 +1,7 @@
 ## Port Configuration
 server:
     contextPath: /briks
+    port: 9000
     
 spring:
     application:

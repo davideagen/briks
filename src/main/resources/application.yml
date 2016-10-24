@@ -1,0 +1,28 @@
+## Port Configuration
+server:
+    contextPath: /briks
+    
+spring:
+    application:
+        name: Briks Services
+        
+# Spring Boot properties
+error:
+    whitelabel:
+        enabled: false
+        
+## Briks Properties
+## briks:
+##    resource-jndiname: java:comp/env/jdbc/briks
+
+## Ldap Properties    
+## ldap:
+##    enabled: enable
+##    user-search-filter: cn={0}
+##    ldap-auth-url: ldap://bi.corp:3268
+##    ldap-auth-port: 3268
+##    ldap-url: ldaps://ldap1-lb.bi.corp:636
+##    ldap-connection-name: CN=svc-honeycomb,OU=Service,OU=Accounts,OU=ENT,DC=bius,DC=bi,DC=corp
+##    ldap-password: 8D269EEC0828466EFF3A721BAA592558
+##    ldap-salt: ldap
+##    ldap-root: dc=bi,dc=corp

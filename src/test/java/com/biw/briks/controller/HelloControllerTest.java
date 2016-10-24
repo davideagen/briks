@@ -1,19 +1,20 @@
 
 package com.biw.briks.controller;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.biw.briks.controller.HelloController.HelloWorldResponse;
+import com.biw.briks.BriksApplication;
 
 @RunWith( SpringRunner.class )
-@SpringBootTest
+@SpringBootTest( webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = BriksApplication.class )
 public class HelloControllerTest
 {
 
@@ -23,8 +24,9 @@ public class HelloControllerTest
   @Test
   public void helloWorldTest()
   {
-    HelloWorldResponse body = this.restTemplate.getForObject( "/sevices/hello", HelloWorldResponse.class );
-    assertThat( body.getMessage() ).isEqualTo( "Hello World" );
+    ResponseEntity<HelloWorldResponse> fact = restTemplate.getForEntity( "/briks/service/hello", HelloWorldResponse.class );
+    assertNotNull( fact.getBody() );
+    assertEquals( fact.getBody().getMessage(), "Hello World !!!" );
   }
 
 }

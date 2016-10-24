@@ -21,13 +21,5 @@ public class HelloController
   {
     return new HelloWorldResponse();
   }
-
-  public class HelloWorldResponse
-  {
-
-    public String getMessage()
-    {
-      return "Hello World !!! ";
-    }
-  }
+  
 }

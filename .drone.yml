@@ -1,0 +1,10 @@
+build:
+  briks:
+    image: openjdk:8-jdk
+    commands:
+      - touch foo.txt
+  briks2:
+    image: node:6.9.1
+    commands:
+      - ls -l
+

@@ -4,6 +4,18 @@ build:
     commands:
       - ./gradlew build
 
+publish:
+  briks:
+    image: ecr
+    access_key: $$ECR_ACCESS_KEY
+    secret_key: $$ECR_SECRET_KEY
+    region: us-west-2
+    repo: 302265824077.dkr.ecr.us-west-2.amazonaws.com/briks
+    tag: "$${COMMIT:0:7}"
+    create_repository: true
+    # when:
+    #   branch: master
+    #   event: push
 
 notify:
   slack:

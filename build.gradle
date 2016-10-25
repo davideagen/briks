@@ -16,12 +16,12 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
-apply plugin: 'war'
+apply plugin: 'application'
 apply plugin: 'idea'
 
 bootRepackage { mainClass = "com.biw.briks.BriksApplication" }
 
-war { archiveName "briks.war" }
+//war { archiveName "briks.war" }
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

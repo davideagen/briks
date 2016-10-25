@@ -10,12 +10,12 @@ publish:
     access_key: $$ECR_ACCESS_KEY
     secret_key: $$ECR_SECRET_KEY
     region: us-west-2
-    repo: briks2
+    repo: briks
     tag: "$${COMMIT:0:7}"
     create_repository: true
-    # when:
-    #   branch: master
-    #   event: push
+    when:
+      branch: master
+      repo: biw-labs/briks
 
 deploy:
   briks-default:
@@ -30,7 +30,7 @@ deploy:
     timeout: 120
     when:
       branch: master
-      event: push
+      repo: biw-labs/briks
 
 notify:
   slack:
@@ -39,7 +39,7 @@ notify:
     from: drone
     when:
       branch: master
-      event: push
+      repo: biw-labs/briks
       failure: true
   pull-request:
     image: slack

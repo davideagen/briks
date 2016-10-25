@@ -4,3 +4,22 @@ build:
     commands:
       - ./gradlew build
 
+
+notify:
+  slack:
+    webhook_url: https://hooks.slack.com/services/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
+    channel: hack-devops
+    from: drone
+    when:
+      branch: master
+      # failure: true
+      event: [push, tag]
+  # pull-request:
+  #   image: slack
+  #   webhook_url: $$SLACK_WEBHOOK_URL
+  #   channel: my-team-room
+  #   template: ":pullreq: *Ready for review* - {{build.title}}\n - {{build.link_url}}\n - by {{build.author}}"
+  #   from: drone
+  #   when:
+  #     success: true
+  #     event: pull_request

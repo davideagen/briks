@@ -44,5 +44,8 @@ dependencies {
   	// Logback
   	compile "org.codehaus.janino:janino:${logbackJaninoVersion}"
   	
+  	//PostGreSQL
+  	compile "org.postgresql:postgresql:${postgresqlVersion}"
+  	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

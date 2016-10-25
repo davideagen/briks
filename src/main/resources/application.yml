@@ -7,6 +7,18 @@ spring:
     application:
         name: Briks Services
         
+    datasource:
+        url: jdbc:postgresql://192.168.99.100:5432/briks
+        username: briks
+        password: briks
+        
+    jpa:
+        showSql: true
+        hibernate:
+            ddl-auto: create-drop
+        database-platform: org.hibernate.dialect.PostgreSQLDialect         
+        generate-ddl: true    
+        
 # Spring Boot properties
 error:
     whitelabel:

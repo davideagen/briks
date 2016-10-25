@@ -10,7 +10,7 @@ publish:
     access_key: $$ECR_ACCESS_KEY
     secret_key: $$ECR_SECRET_KEY
     region: us-west-2
-    repo: 302265824077.dkr.ecr.us-west-2.amazonaws.com/briks
+    repo: briks2
     tag: "$${COMMIT:0:7}"
     create_repository: true
     # when:
@@ -26,11 +26,11 @@ deploy:
     service: briks/briks
     docker_image: 302265824077.dkr.ecr.us-west-2.amazonaws.com/briks:$${COMMIT:0:7}
     start_first: true
-    confirm: true
+    confirm: false
     timeout: 120
-    # when:
-    #   branch: master
-    #   event: push
+    when:
+      branch: master
+      event: push
 
 notify:
   slack:

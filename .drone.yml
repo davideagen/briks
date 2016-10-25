@@ -26,7 +26,7 @@ deploy:
     service: briks/briks
     docker_image: 302265824077.dkr.ecr.us-west-2.amazonaws.com/briks:$${COMMIT:0:7}
     start_first: true
-    confirm: false
+    confirm: true
     timeout: 120
     when:
       branch: master

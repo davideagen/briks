@@ -17,6 +17,21 @@ publish:
     #   branch: master
     #   event: push
 
+deploy:
+  briks-default:
+    image: rancher
+    url: http://rancher.biw-labs.com:8080
+    access_key: $$RANCHER_DEFAULT_ACCESS_KEY
+    secret_key: $$RANCHER_DEFAULT_SECRET_KEY
+    service: briks/briks
+    docker_image: 302265824077.dkr.ecr.us-west-2.amazonaws.com/briks:$${COMMIT:0:7}
+    start_first: true
+    confirm: true
+    timeout: 120
+    # when:
+    #   branch: master
+    #   event: push
+
 notify:
   slack:
     webhook_url: https://hooks.slack.com/services/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

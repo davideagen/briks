@@ -11,7 +11,7 @@ CREATE TABLE form_set
      id            				NUMBER(18, 0) NOT NULL, 
      form_id        			NUMBER(18, 0) NOT NULL, 
      label          			VARCHAR2(40 CHAR) NOT NULL, 
-     order   					NUMBER(4,0), 
+     display_order   			NUMBER(4,0), 
      created_by    				NUMBER(18, 0) NOT NULL, 
      date_created  				TIMESTAMP DEFAULT current_timestamp NOT NULL, 
      modified_by   				NUMBER(18, 0), 

@@ -37,7 +37,7 @@ check {
 }
 
 cobertura {
-	coverageCheckTotalLineRate = 20
+	coverageCheckTotalLineRate = 10
 	coverageCheckHaltOnFailure = true
 }
 

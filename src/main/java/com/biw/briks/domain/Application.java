@@ -16,9 +16,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 @Entity
 @Table( name = "APPLICATION" )
 public class Application extends BaseEntity
@@ -38,7 +35,6 @@ public class Application extends BaseEntity
   private Long orgId;
 
   // bi-directional many-to-one association to Organization
-  //@JsonBackReference( value = "organizationApplications" )
   @ManyToOne( fetch = FetchType.LAZY )
   @JoinColumn( name = "ORG_ID", referencedColumnName = "id", insertable = false, updatable = false )
   private Organization organization;

@@ -1,6 +1,9 @@
 
 package com.biw.briks.domain;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,10 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table( name = "FORM" )
@@ -32,12 +34,13 @@ public class Form extends BaseEntity
   @Column( name = "APP_ID" )
   private Long appId;
 
-  // bi-directional many-to-one association to Application
-  @JsonBackReference( value = "applicationForms" )
   @ManyToOne( fetch = FetchType.LAZY )
   @JoinColumn( name = "APP_ID", referencedColumnName = "id", insertable = false, updatable = false )
   private Application application;
 
+  @OneToMany( mappedBy = "form", fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+  private Set<FormSet> formSets;
+  
   public Long getFormId()
   {
     return id;

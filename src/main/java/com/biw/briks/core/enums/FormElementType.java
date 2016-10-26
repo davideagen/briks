@@ -4,8 +4,7 @@ package com.biw.briks.core.enums;
 public enum FormElementType
 {
   TEXT_BOX( "text_box" ), 
-  TEXT_AREA( "text_area" ),
-  ;
+  TEXT_AREA( "text_area" );
 
   private final String type;
 

@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Table( name = "FORM" )
 public class Form extends BaseEntity
 {
-
   private static final long serialVersionUID = 1L;
 
   @Id
@@ -28,10 +27,8 @@ public class Form extends BaseEntity
 
   @Column( name = "NAME" )
   private String name;
-
   @Column( name = "DESCRIPTION" )
   private String description;
-
   @Column( name = "APP_ID" )
   private Long appId;
 

@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Table( name = "APPLICATION" )
 public class Application extends BaseEntity
 {
-
   private static final long serialVersionUID = 1L;
 
   @Id
@@ -33,21 +32,19 @@ public class Application extends BaseEntity
 
   @Column( name = "NAME" )
   private String name;
-
   @Column( name = "DESCRIPTION" )
   private String description;
-
   @Column( name = "ORG_ID" )
   private Long orgId;
 
   // bi-directional many-to-one association to Organization
-  @JsonBackReference( value = "organizationApplications" )
+  //@JsonBackReference( value = "organizationApplications" )
   @ManyToOne( fetch = FetchType.LAZY )
   @JoinColumn( name = "ORG_ID", referencedColumnName = "id", insertable = false, updatable = false )
   private Organization organization;
 
   // bi-directional one-to-many association to Form
-  @JsonManagedReference( value = "applicationForms" )
+  //@JsonManagedReference( value = "applicationForms" )
   @OneToMany( mappedBy = "application", fetch = FetchType.LAZY, cascade = CascadeType.ALL )
   private Set<Form> forms;
 

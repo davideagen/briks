@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Table( name = "ORGANIZATION" )
 public class Organization extends BaseEntity
 {
-
   private static final long serialVersionUID = 1L;
 
   @Id
@@ -30,7 +29,6 @@ public class Organization extends BaseEntity
 
   @Column( name = "ORG_NAME" )
   private String orgName;
-
   @Column( name = "ORG_CODE" )
   private String orgCode;
 

@@ -16,5 +16,5 @@ CREATE TABLE form_set
      date_created  				TIMESTAMP DEFAULT current_timestamp NOT NULL, 
      modified_by   				INTEGER, 
      date_modified 				TIMESTAMP DEFAULT current_timestamp, 
-     version       				INTEGER DEFAULT 1 
+     version       				INTEGER DEFAULT 1  
   ); 

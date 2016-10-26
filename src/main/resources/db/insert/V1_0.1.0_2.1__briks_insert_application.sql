@@ -1,1 +1,1 @@
-insert into APPLICATION values ( 1, 1, 'Briks', 'The Briks Hack-a-thon Team', now(), null, 5555, null, 1 ) ; 
+insert into APPLICATION values ( 1, 1, 'Briks', 'The Briks Hack-a-thon Team', 5555, now(), null, null, 1 ) ; 

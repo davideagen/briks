@@ -8,17 +8,15 @@ CREATE SEQUENCE form_element_seq
 
 CREATE TABLE form_element
   ( 
-     id            				NUMBER(18, 0) NOT NULL, 
-     form_set_id        		NUMBER(18, 0) NOT NULL, 
-     element_type          		VARCHAR2(40 CHAR) NOT NULL,
-     label          			VARCHAR2(40 CHAR) NOT NULL,
-     name          				VARCHAR2(40 CHAR) NOT NULL,
-     display_order   			NUMBER(4,0), 
-     created_by    				NUMBER(18, 0) NOT NULL, 
+     id            				INTEGER PRIMARY KEY, 
+     form_set_id        		INTEGER NOT NULL REFERENCES FORM_SET( ID ), 
+     element_type          		CHAR(40) NOT NULL,
+     label          			CHAR(40) NOT NULL,
+     name          				CHAR(40) NOT NULL,
+     display_order   			INTEGER, 
+     created_by    				INTEGER NOT NULL, 
      date_created  				TIMESTAMP DEFAULT current_timestamp NOT NULL, 
-     modified_by   				NUMBER(18, 0), 
+     modified_by   				INTEGER, 
      date_modified 				TIMESTAMP DEFAULT current_timestamp, 
-     version       				NUMBER(18, 0) DEFAULT 1, 
-     CONSTRAINT form_element_pk PRIMARY KEY (id), 
-     CONSTRAINT form_set_fk 	FOREIGN KEY (form_set_id) 
+     version       				INTEGER DEFAULT 1 
   ); 

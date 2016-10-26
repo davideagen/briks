@@ -8,13 +8,13 @@ CREATE SEQUENCE org_seq
 
 CREATE TABLE organization 
   ( 
-     id            				NUMBER(18, 0) NOT NULL, 
-     org_name          			VARCHAR2(40 CHAR) NOT NULL, 
-     org_code   				VARCHAR2(40 CHAR), 
-     created_by    				NUMBER(18, 0) NOT NULL, 
+     id            				INTEGER NOT NULL, 
+     org_name          			CHAR(40) NOT NULL, 
+     org_code   				CHAR(40), 
+     created_by    				INTEGER NOT NULL, 
      date_created  				TIMESTAMP DEFAULT current_timestamp NOT NULL, 
-     modified_by   				NUMBER(18, 0), 
+     modified_by   				INTEGER, 
      date_modified 				TIMESTAMP DEFAULT current_timestamp, 
-     version       				NUMBER(18, 0) DEFAULT 1, 
+     version       				INTEGER DEFAULT 1, 
      CONSTRAINT org_pk 			PRIMARY KEY (id)
   );

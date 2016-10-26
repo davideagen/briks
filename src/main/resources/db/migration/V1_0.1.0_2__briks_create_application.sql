@@ -7,16 +7,14 @@ CREATE SEQUENCE application_seq
 /* CREATE TABLE */
 
 CREATE TABLE application 
-  ( 
-     id            				NUMBER(18, 0) NOT NULL, 
-     org_id        				NUMBER(18, 0) NOT NULL, 
-     name          				VARCHAR2(40 CHAR) NOT NULL, 
-     description   				VARCHAR2(4000 CHAR), 
-     created_by    				NUMBER(18, 0) NOT NULL, 
+( 
+     id            				INTEGER PRIMARY KEY, 
+     org_id        				INTEGER NOT NULL REFERENCES ORGANIZATION( id ), 
+     name          				CHAR(40) NOT NULL, 
+     description   				CHAR(4000), 
+     created_by    				INTEGER NOT NULL, 
      date_created  				TIMESTAMP DEFAULT current_timestamp NOT NULL, 
-     modified_by   				NUMBER(18, 0), 
+     modified_by   				INTEGER, 
      date_modified 				TIMESTAMP DEFAULT current_timestamp, 
-     version       				NUMBER(18, 0) DEFAULT 1, 
-     CONSTRAINT application_pk 	PRIMARY KEY (id), 
-     CONSTRAINT org_fk 			FOREIGN KEY (org_id) 
-  ); 
+     version       				INTEGER DEFAULT 1
+); 

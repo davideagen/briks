@@ -8,15 +8,13 @@ CREATE SEQUENCE form_set_seq
 
 CREATE TABLE form_set
   ( 
-     id            				NUMBER(18, 0) NOT NULL, 
-     form_id        			NUMBER(18, 0) NOT NULL, 
-     label          			VARCHAR2(40 CHAR) NOT NULL, 
-     order   					NUMBER(4,0), 
-     created_by    				NUMBER(18, 0) NOT NULL, 
+     id            				INTEGER PRIMARY KEY, 
+     form_id        			INTEGER NOT NULL REFERENCES FORM( ID ), 
+     label          			CHAR(40) NOT NULL, 
+     display_order				INTEGER, 
+     created_by    				INTEGER NOT NULL, 
      date_created  				TIMESTAMP DEFAULT current_timestamp NOT NULL, 
-     modified_by   				NUMBER(18, 0), 
+     modified_by   				INTEGER, 
      date_modified 				TIMESTAMP DEFAULT current_timestamp, 
-     version       				NUMBER(18, 0) DEFAULT 1, 
-     CONSTRAINT form_set_pk 	PRIMARY KEY (id), 
-     CONSTRAINT form_fk 		FOREIGN KEY (form_id) 
+     version       				INTEGER DEFAULT 1 
   ); 
